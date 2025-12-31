@@ -1,0 +1,177 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #F0F0F0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #008080;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #008080;
+    border-bottom: 3px solid #ADD8E6;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #008080;
+}
+
+input, select {
+    padding: 12px;
+    border: 2px solid #ADD8E6;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #008080;
+    box-shadow: 0 0 0 3px rgba(0,128,128,0.2);
+}
+
+button[type="submit"] {
+    grid-column: span 2;
+    background-color: #008080;
+    color: white;
+    font-size: 18px;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button[type="submit"]:hover {
+    background-color: #006666;
+}
+
+#acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-principal {
+    background-color: #FFA500;
+    color: white;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-principal:hover {
+    background-color: #e69500;
+}
+
+.btn-secundario {
+    background-color: #dc3545;
+    color: white;
+    font-size: 16px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-secundario:hover {
+    background-color: #c82333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ADD8E6;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+li button {
+    background-color: #FFA500;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#totalesContainer p {
+    font-size: 18px;
+    color: #008080;
+    font-weight: bold;
+}
+
+#granTotal {
+    font-size: 24px;
+    color: #FFA500;
+    text-align: center;
+    font-weight: bold;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+    .charts-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.chart-container {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    height: 450px;
+    position: relative;
+}

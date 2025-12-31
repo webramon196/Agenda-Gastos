@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Gastos</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- jsPDF + autoTable para mejor PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Agenda de Gastos</h1>
+    </header>
+
+    <main>
+        <section id="formulario">
+            <h2>Añadir Gasto</h2>
+            <form id="gastoForm">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" required>
+                
+                <label for="categoria">Categoría:</label>
+                <select id="categoria" required>
+                    <option value="Hoteles">Hoteles</option>
+                    <option value="Gasoil">Gasoil</option>
+                    <option value="Comidas">Comidas</option>
+                    <option value="Cafetería">Cafetería</option>
+                    <option value="Parking">Parking</option>
+                    <option value="Salones">Salones</option>
+                    <option value="Varios">Varios</option>
+                </select>
+                
+                <label for="monto">Monto (€):</label>
+                <input type="number" id="monto" step="0.01" min="0" placeholder="0.00" required>
+                
+                <label for="descripcion">Descripción (opcional):</label>
+                <input type="text" id="descripcion" placeholder="Ej: Hotel Madrid centro">
+                
+                <button type="submit">Añadir Gasto</button>
+            </form>
+        </section>
+        
+        <section id="acciones">
+            <button id="exportarPDF" class="btn-principal">Exportar a PDF</button>
+            <button id="eliminarTodos" class="btn-secundario">Eliminar Todos los Gastos</button>
+        </section>
+
+        <section id="listaGastos">
+            <h2>Lista de Gastos</h2>
+            <ul id="gastosList"></ul>
+        </section>
+        
+        <section id="totales">
+            <h2>Totales por Categoría</h2>
+            <div id="totalesContainer"></div>
+            <p id="granTotal">Gran Total: 0.00 €</p>
+        </section>
+        
+        <section id="graficos">
+            <h2>Análisis Visual de Gastos</h2>
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <canvas id="pieChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
